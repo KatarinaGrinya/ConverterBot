@@ -23,7 +23,7 @@ def values(message: telebot.types.Message):
 
 
 @bot.message_handler(content_types=['text', ])
-def convert(message: telebot.types.Message):
+def get_price(message: telebot.types.Message):
     try:
         values = message.text.split(' ')
 
