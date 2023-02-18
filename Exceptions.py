@@ -31,8 +31,8 @@ class CryptoConverter:
         if amount <= 0:
             raise APIExeption(f'Количество валюты не может быть меньше/равно 0')
 
-        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}')
-        interm_base = json.loads(r.content)[keys[base]]
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={base_ticker}&tsyms={quote_ticker}')
+        interm_base = json.loads(r.content)[keys[quote]]
         total_base = interm_base * amount
         return round(total_base, 2)
 
