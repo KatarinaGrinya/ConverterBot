@@ -43,7 +43,7 @@ def convert(message: telebot.types.Message):
         inclined_base = DeclinasionByCases(base, float(total_base))
         quote = inclined_quote.incline()
         base = inclined_base.incline()
-        text = f'{amount} {quote} = {total_base} {base}'
+        text = f'{amount} {base} = {total_base} {quote}'
         bot.send_message(message.chat.id, text)
 
 
